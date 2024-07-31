@@ -1,0 +1,181 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.App {
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.App h1 {
+  font-size: 25px;
+  color: #f1356d;
+  margin-bottom: 30px;
+}
+
+.App input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+  display: block; 
+  border-radius: 5px; /* 圓角邊框 */
+}
+
+.input-container {
+  display: flex;
+}
+
+button {
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.image-button {
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.button-image {
+  width: 35px; /* 根據需要調整圖片大小 */
+  height: 35px; /* 根據需要調整圖片大小 */
+}
+
+.image-button2 {
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.button-image2 {
+  width: 40px; /* 根據需要調整圖片大小 */
+  height: 40px; /* 根據需要調整圖片大小 */
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+}
+
+input[type="text"] {
+  flex: 1; /* 使輸入框填充可用空間 */
+}
+
+.text-button {
+  border: 1px solid #ccc; /* 加上邊框 */
+  background-color: #f8f8f8; /* 淺灰色背景 */
+  padding: 10px 20px; /* 內邊距 */
+  cursor: pointer;
+  display: inline-block;
+}
+
+.text-button:hover {
+  background-color: #e0e0e0; /* 當鼠標懸停時的背景顏色 */
+}
+
+/* 登入框樣式 */
+/* 模擬框样式 */
+.Login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed; /* 固定位置 */
+  z-index: 1; /* 置于最前 */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; /* 如果内容過多，則滾動 */
+  background-color: rgba(0, 0, 0, 0.4); /* 半透明背景 */
+}
+
+.Login-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 使模擬框居中 */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* 寬度 */
+  max-width: 500px; /* 最大寬度 */
+  border-radius: 12px; /* 圓角 */
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.Login input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.Login button {
+  width: 100%;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.Login button:hover {
+  background-color: #45a049;
+}
+
+.link {
+  color: blue;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.link:hover {
+  text-decoration: none;
+}
+
+.locate-button {
+  background-color: #4CAF50; /* 綠色背景 */
+  color: white; /* 白色文字 */
+  padding: 10px; /* 內邊距 */
+  text-align: center; /* 文字居中 */
+  display: inline-block; /* 行內塊元素 */
+  font-size: 16px; /* 文字大小 */
+  margin: 6px 6px; /* 外邊距 */
+  border-radius: 12px; /* 圓角 */
+}
+
+.locate-button:hover {
+  background-color: #45a049; /* 懸停時的背景色 */
+}
