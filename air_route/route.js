@@ -4,7 +4,7 @@ const axios = require('axios');
 const swaggerJsdoc = require('swagger-jsdoc');
 const swaggerUi = require('swagger-ui-express');
 const app = express();
-const port = 3000;
+const port = 3001;
 
 const GOOGLE_MAPS_API_KEY = process.env.GOOGLE_MAPS_API_KEY;
 
@@ -17,7 +17,7 @@ const swaggerDefinition = {
   },
   servers: [
     {
-      url: 'http://localhost:3000'
+      url: 'http://localhost:3001'
     }
   ]
 };

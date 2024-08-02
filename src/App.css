@@ -14,8 +14,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  min-height: 7vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -26,6 +25,97 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.input-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.input-field {
+  padding: 12px;
+  margin: 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  outline: none;
+  width: 200px;
+  box-sizing: border-box;
+}
+
+.swap-button {
+  margin: 0 8px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.search-button {
+  margin: 0;
+  padding: 0;
+  background-color: #7d92f8;
+  border: 1px solid #ddd;
+  border-left: none;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 33px;
+  height: 38px;
+  position: relative;
+  right: 4px;
+  z-index: 1;
+  transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+  background-color: #5a73d7;
+}
+
+.button-image {
+  width: 30px;
+  height: 30px;
+}
+
+.button-image2 {
+  width: 18px;
+  height: 18px;
+  padding: 10px;
+}
+
+.text-button {
+  margin-left: 1px;
+  padding: 10px;
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.text-button:hover {
+  background-color: #e0e0e0;
+}
+
+.chat-icon {
+  position: fixed; 
+  bottom: 10px;
+  right: 35%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.chat-icon:hover {
+  transform: scale(1.1); /* 懸停时放大 */
 }
 
 @keyframes App-logo-spin {
