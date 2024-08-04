@@ -1,10 +1,11 @@
-import './App.css';
 import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import InputForm from './components/InputForm';
 import MapContainer from './components/MapContainer';
 import LoginModal from './components/LoginModal';
+import Chatbot from './components/Chatbot'; // 引入聊天機器人組件
 import chat from './messenger.png';
+import './App.css';
 import { initialState, useLocationState } from './models/LocationModel';
 import {
   handleSwap,
@@ -22,6 +23,7 @@ function App() {
   const [state, setState] = useState(initialState);
   const locationActions = useLocationState(setState);
   const [showLogin, setShowLogin] = useState(false);
+  const [showChatbot, setShowChatbot] = useState(false); // 管理聊天機器人的可見性
   const [Username, setUsername] = useState('');
   const [Password, setPassword] = useState('');
   const [Email, setEmail] = useState('');
@@ -46,8 +48,16 @@ function App() {
   }, [locationActions]);
 
   const handleSearchClick = () => {
-    handleSearchLocation(state.val1, locationActions.setCurrentPosition);
-    handleSearchLocation(state.val2, locationActions.setDestination);
+    if (state.val1 !== state.prevVal1 || state.val2 !== state.prevVal2) {
+      handleSearchLocation(state.val1, locationActions.setCurrentPosition);
+      handleSearchLocation(state.val2, locationActions.setDestination);
+      
+      setState({
+        ...state,
+        prevVal1: state.val1,
+        prevVal2: state.val2,
+      });
+    }
   };
 
   return (
@@ -109,7 +119,13 @@ function App() {
         setEmail={setEmail}
         setNewPassword={setNewPassword}
       />
-      <img src={chat} alt="Chat Icon" className="chat-icon" />
+      <img 
+        src={chat} 
+        alt="Chat Icon" 
+        className="chat-icon" 
+        onClick={() => setShowChatbot(!showChatbot)} // 點擊切換聊天機器人的可見性
+      />
+      <Chatbot isVisible={showChatbot} onClose={() => setShowChatbot(false)} /> {/* 添加聊天機器人 */}
     </div>
   );
 }

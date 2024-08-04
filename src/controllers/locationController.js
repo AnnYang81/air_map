@@ -23,7 +23,7 @@ export const handleSearchLocation = (address, setPosition) => {
     return;
   }
 
-  fetch(`${GEOCODING_API_URL}?address=${encodeURIComponent(address)}&key=AIzaSyBbaRZlyvFaqVmf5QKfLHGQtJzz4RR46dw`)
+  fetch(`${GEOCODING_API_URL}?address=${encodeURIComponent(address)}&key=AIzaSyBbaRZlyvFaqVmf5QKfLHGQtJzz4RR46d`)
     .then(response => response.json())
     .then(data => {
       if (data.results && data.results.length > 0) {
