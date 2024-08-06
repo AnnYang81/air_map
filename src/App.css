@@ -59,7 +59,8 @@
 .search-button {
   margin: 0;
   padding: 0;
-  background-color: #7d92f8;
+  /* background-color: #7d92f8; */
+  background-color: #3293fb;
   border: 1px solid #ddd;
   border-left: none;
   border-radius: 0 5px 5px 0;
@@ -106,8 +107,8 @@
 
 .chat-icon {
   position: fixed; 
-  bottom: 10px;
-  right: 32%;
+  bottom: 2%;
+  right: 35%;
   width: 50px;
   height: 50px;
   cursor: pointer;
@@ -115,8 +116,10 @@
 }
 
 .chat-icon:hover {
-  transform: scale(1.1); /* 懸停时放大 */
+  transform: scale(1.1); 
 }
+
+
 
 @keyframes App-logo-spin {
   from {

@@ -125,7 +125,7 @@ function App() {
         className="chat-icon" 
         onClick={() => setShowChatbot(!showChatbot)} // 點擊切換聊天機器人的可見性
       />
-      <Chatbot isVisible={showChatbot} onClose={() => setShowChatbot(false)} /> {/* 添加聊天機器人 */}
+      <Chatbot isVisible={showChatbot} onClose={() => setShowChatbot(false)} />
     </div>
   );
 }
