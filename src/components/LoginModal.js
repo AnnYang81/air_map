@@ -1,6 +1,5 @@
-// components/LoginModal.js
-
 import React from 'react';
+import Swal from 'sweetalert2';
 
 const LoginModal = ({
   showLogin,
@@ -105,7 +104,6 @@ const LoginModal = ({
               <button type="submit">設定新密碼</button>
             </form>
             <p>記得密碼了？<span className="link" onClick={() => setModalType('login')}>登入</span></p>
-            <p>没有帳戶？<span className="link" onClick={() => setModalType('register')}>註冊</span></p>
           </div>
         )}
       </div>

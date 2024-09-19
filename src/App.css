@@ -1,65 +1,60 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  max-width: 1200px;
+  margin: 0 auto; /* 設定應用程式的最大寬度並使內容居中 */
 }
 
 .App-header {
   min-height: 7vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
+  color: white; /* 設定標題區域的對齊方式、字體大小和顏色 */
 }
 
 .input-container {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 10px;
+  justify-content: center; /* 將功能區居中排列 */
+  gap: 20px;
+  width: 100%; /* 使用整個可用寬度 */
+  padding-left: 20px; /* 調整左側填充 */
+  padding-right: 20px; /* 調整右側填充 */
+  box-sizing: border-box; /* 確保 padding 不會影響寬度 */
 }
 
 .input-wrapper {
   display: flex;
   align-items: center;
+  flex-grow: 1;
+  gap: 10px; /* 設定輸入框容器內元素的間距 */
 }
 
 .input-field {
-  padding: 12px;
-  margin: 0;
+  padding: 15px;
   border: 1px solid #ddd;
   border-radius: 5px;
   outline: none;
-  width: 200px;
-  box-sizing: border-box;
+  flex: 2;
+  font-size: 16px;
+  min-width: 250px; /* 設定輸入框的最小寬度 */
 }
 
 .swap-button {
-  margin: 0 8px;
   background-color: transparent;
   border: none;
-  cursor: pointer;
+  cursor: pointer; /* 設定交換按鈕的樣式 */
 }
 
 .search-button {
-  margin: 0;
-  padding: 0;
-  /* background-color: #7d92f8; */
   background-color: #3293fb;
   border: 1px solid #ddd;
   border-left: none;
@@ -68,64 +63,75 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 33px;
-  height: 38px;
-  position: relative;
-  right: 4px;
-  z-index: 1;
-  transition: background-color 0.3s ease;
+  width: 50px;
+  height: 50px;
+  transition: background-color 0.3s ease; /* 設定搜尋按鈕的樣式與過渡效果 */
 }
 
 .search-button:hover {
-  background-color: #5a73d7;
+  background-color: #5a73d7; /* 設定搜尋按鈕的懸停效果 */
 }
 
 .button-image {
-  width: 30px;
-  height: 30px;
+  width: 35px;
+  height: 35px; /* 設定按鈕內圖像的大小 */
 }
 
 .button-image2 {
-  width: 18px;
-  height: 18px;
-  padding: 10px;
+  width: 25px;
+  height: 25px; /* 設定較小按鈕內圖像的大小 */
 }
 
-.text-button {
-  margin-left: 1px;
-  padding: 10px;
+.text-button, .history-button {
+  padding: 15px 25px;
   background-color: #f8f8f8;
   border: 1px solid #ccc;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  font-size: 16px; /* 設定按鈕的樣式與過渡效果 */
 }
 
-.text-button:hover {
-  background-color: #e0e0e0;
+.text-button:hover, .history-button:hover {
+  background-color: #e0e0e0; /* 設定按鈕的懸停效果 */
 }
 
 .chat-icon {
-  position: fixed; 
-  bottom: 2%;
-  right: 35%;
-  width: 50px;
-  height: 50px;
+  position: fixed;
+  bottom: 5%;
+  right: 5%;
+  width: 60px;
+  height: 60px;
   cursor: pointer;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease; /* 設定聊天機器人圖標的位置與過渡效果 */
 }
 
 .chat-icon:hover {
-  transform: scale(1.1); 
+  transform: scale(1.1); /* 設定聊天機器人圖標的懸停效果 */
+}
+
+.chat-icon {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  width: 50px;
+  cursor: pointer;
+}
+
+.map-container {
+  position: relative;
+  width: 100%;
+  height: 550px;
+}
+
+.custom-info-window {
+  font-size: 14px;
+  color: #333;
+}
+
+.locate-button:hover {
+  background-color: #0056b3;
 }
 
 
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
