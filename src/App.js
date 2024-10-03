@@ -35,27 +35,30 @@ function App() {
   const [showHistoryModal, setShowHistoryModal] = useState(false);
 
   useEffect(() => {
+    // 使用 navigator API 獲取使用者的當前地理位置
     navigator.geolocation.getCurrentPosition(
       (position) => {
+        // 如果定位成功，取得使用者的經緯度資訊
         const initialUserCenter = {
-          lat: position.coords.latitude,
-          lng: position.coords.longitude,
+          lat: position.coords.latitude, // 使用者的緯度
+          lng: position.coords.longitude, // 使用者的經度
         };
-        setUserCenter(initialUserCenter); // 更新使用者位置
-        locationActions.setUserCenter(initialUserCenter);
+        setUserCenter(initialUserCenter); // 使用 setUserCenter 更新組件中的使用者位置狀態
+        locationActions.setUserCenter(initialUserCenter); // 調用 locationActions 方法來更新使用者的位置
       },
       (error) => {
-        console.error('定位錯誤:', error);
+        // 如果定位失敗，打印錯誤資訊並彈出警告
+        console.error('定位錯誤:', error); // 在控制台顯示錯誤訊息
         Swal.fire({
-          position: 'middle',
-          text: '允許存取使用者位置來使用此功能',
-          icon: 'warning',
-          showCloseButton: true,
-          showConfirmButton: false,
+          position: 'middle', // 彈窗顯示於畫面中央
+          text: '允許存取使用者位置來使用此功能', // 顯示的文字提示使用者允許存取位置
+          icon: 'warning', // 警告圖示
+          showCloseButton: true, // 顯示關閉按鈕
+          showConfirmButton: false, // 不顯示確認按鈕
         });
       }
     );
-  }, []);
+  }, []); // 空依賴陣列意味著此 effect 只會在組件初次渲染時執行一次
 
   const handleSearchClick = () => {
     if (state.val1 !== state.prevVal1 || state.val2 !== state.prevVal2) {
