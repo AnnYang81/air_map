@@ -24,8 +24,9 @@ body {
 .input-container {
   display: flex;
   align-items: center;
+  flex-direction: row; /* 確保水平排列 */
   justify-content: center;
-  gap: 20px;
+  gap: 20px; /* 添加間距 */
   width: 100%;
   padding-left: 2%;
   padding-right: 2%;
@@ -35,10 +36,10 @@ body {
 .input-wrapper {
   display: flex;
   align-items: center;
-  flex-grow: 1;
-  gap: 10px;
+  flex-direction: row; /* 確保水平排列 */
+  gap: 10px; /* 子元素間距 */
   width: 100%;
-  max-width: 600px;
+  max-width: 600px; /* 最大寬度設定 */
 }
 
 .input-field {
@@ -46,10 +47,9 @@ body {
   border: 1px solid #ddd;
   border-radius: 5px;
   outline: none;
-  flex: 2;
+  flex: 1; /* 這裡調整為 flex: 1 */
   font-size: calc(8px + 1.5vmin); /* 基於視窗大小的字體縮放 */
   min-width: 250px;
-  width: 100%; /* 確保輸入框在小螢幕時會自動調整 */
 }
 
 .swap-button {
@@ -61,14 +61,14 @@ body {
 .search-button {
   background-color: #3293fb;
   border: 1px solid #ddd;
-  border-left: none;
-  border-radius: 0 5px 5px 0;
+  border-left: none; /* 防止邊框重疊 */
+  border-radius: 0 5px 5px 0; /* 右上和右下邊框圓角 */
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 50px;
-  height: 50px;
+  width: 50px; /* 按鈕的固定寬度 */
+  height: 50px; /* 按鈕的固定高度 */
   transition: background-color 0.3s ease;
 }
 
@@ -106,19 +106,32 @@ body {
   position: fixed;
   bottom: 5%;
   right: 5%;
-  width: 8vw;
-  height: 8vw;
+  width: 3vw; /* 增加圖標的寬度 */
+  height: 3vw; /* 增加圖標的高度 */
   cursor: pointer;
   transition: transform 0.3s ease;
+  background-color: #ffffff; /* 背景顏色 */
+  border-radius: 50%; /* 使背景為圓形 */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* 添加陰影效果 */
+  display: flex; /* 使圖標能夠居中 */
+  align-items: center; /* 垂直居中 */
+  justify-content: center; /* 水平居中 */
+  padding: 10px; /* 增加內邊距以確保圖標不會被吃掉 */
+}
+
+.chat-icon img {
+  width: 50%; /* 使圖標圖像的寬度為 70% */
+  height: auto; /* 自動調整高度以保持比例 */
 }
 
 .chat-icon:hover {
   transform: scale(1.1);
+  background-color: #e0e0e0; /* 在懸停時改變背景顏色 */
 }
 
 .map-container {
   position: relative;
-  width: 80%; /* 將地圖的寬度設定為80%，可以根據需要調整 */
+  width: 100%; /* 將地圖的寬度設定為80%，可以根據需要調整 */
   height: 40vh; /* 高度設定為40%視窗高度 */
   justify-content: center; /* 水平置中 */
 }
@@ -130,177 +143,4 @@ body {
 
 .locate-button:hover {
   background-color: #0056b3;
-}
-
-/* Media Queries 針對不同裝置進行調整 */
-@media (max-width: 768px) {
-  .input-wrapper {
-    flex-direction: column; /* 垂直排列 */
-    gap: 15px;
-  }
-
-  .search-button {
-    width: 100%; /* 在小螢幕下按鈕佔滿整個輸入區域寬度 */
-    border-radius: 5px;
-  }
-
-  .App-header {
-    font-size: calc(10px + 1.5vmin);
-  }
-}
-
-/* 手機版特別優化 */
-@media (max-width: 480px) {
-  .input-wrapper {
-    flex-direction: column; /* 垂直排列，避免按鈕和輸入框重疊 */
-    gap: 10px;
-  }
-
-  .input-field {
-    width: 100%; /* 讓輸入框在小螢幕時佔滿寬度 */
-    font-size: calc(8px + 1vmin); /* 在小螢幕上進一步縮小字體 */
-  }
-
-  .search-button {
-    width: 100%; /* 讓按鈕佔滿整個寬度，避免重疊 */
-    border-radius: 5px;
-    height: 45px; /* 調整按鈕的高度 */
-  }
-
-  .map-container {
-    width: 100%; /* 地圖在手機上佔滿整個寬度 */
-    height: 30vh; /* 調整地圖高度以符合手機螢幕比例 */
-  }
-
-  .text-button,
-  .history-button {
-    padding: 10px 15px;
-    font-size: 14px;
-  }
-
-  .button-image {
-    width: 30px;
-    height: 30px;
-  }
-
-  .chat-icon {
-    width: 10vw;
-    height: 10vw;
-  }
-}
-
-/* 針對更小的螢幕 (320px 以下) */
-@media (max-width: 320px) {
-  .input-wrapper {
-    gap: 8px;
-  }
-
-  .input-field {
-    font-size: calc(6px + 1vmin);
-    padding: 10px;
-  }
-
-  .search-button {
-    height: 40px; /* 更小的按鈕高度 */
-  }
-
-  .map-container {
-    height: 25vh; /* 在更小螢幕進一步縮小地圖高度 */
-  }
-
-  .chat-icon {
-    width: 8vw;
-    height: 8vw;
-  }
-
-  .button-image {
-    width: 25px;
-    height: 25px;
-  }
-}
-
-/* Chatbot container styles */
-.chatbot-container {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 300px;
-  max-height: 400px;
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.chatbot-container.hidden {
-  transform: translateY(100%);
-  opacity: 0;
-}
-
-.chatbot-container.visible {
-  transform: translateY(0);
-  opacity: 1;
-}
-
-.chatbot-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #007bff;
-  color: white;
-  padding: 10px;
-}
-
-.chatbot-messages {
-  flex-grow: 1;
-  padding: 10px;
-  overflow-y: auto;
-  display: flex;
-  flex-direction: column;
-}
-
-.message {
-  margin: 5px 0;
-  padding: 8px 12px;
-  border-radius: 20px;
-  max-width: 80%;
-}
-
-.message.user {
-  background-color: #f1f1f1;
-  align-self: flex-end;
-}
-
-.message.bot {
-  background-color: #007bff;
-  color: white;
-  align-self: flex-start;
-}
-
-.chatbot-input {
-  display: flex;
-  padding: 10px;
-  background-color: #f7f7f7;
-}
-
-.chatbot-input input {
-  flex-grow: 1;
-  border: none;
-  padding: 10px;
-  border-radius: 20px;
-  margin-right: 5px;
-  outline: none;
-}
-
-.chatbot-input button {
-  padding: 10px 10px;
-  border: none;
-  border-radius: 20px;
-  background-color: #007bff;
-  color: white;
-  cursor: pointer;
-  outline: none;
 }

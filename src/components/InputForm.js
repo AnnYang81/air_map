@@ -41,12 +41,14 @@ const InputForm = ({
         <img src={buttonImage2} alt="search icon" className="button-image2" />
       </button>
     </div>
-    <button type="button" className="text-button" onClick={() => setShowLogin(true)}>
-      登入
-    </button>
-    <button type="button" className="history-button" onClick={() => setShowHistoryModal(true)}>
-      搜尋紀錄
-    </button>
+    <div className="button-row"> {/* 新增此行 */}
+      <button type="button" className="text-button" onClick={() => setShowLogin(true)}>
+        登入
+      </button>
+      <button type="button" className="history-button" onClick={() => setShowHistoryModal(true)}>
+        搜尋紀錄
+      </button>
+    </div>
   </form>
 );
 

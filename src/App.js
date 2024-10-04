@@ -6,6 +6,7 @@ import LoginModal from './components/LoginModal';
 import Chatbot from './components/Chatbot';
 import chat from './messenger.png';
 import './App.css';
+import './mobile.css';
 import { initialState, useLocationState } from './LocationModel';
 import {
   handleLogin,
