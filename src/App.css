@@ -7,6 +7,9 @@ body {
 }
 
 .App {
+  display: flex; /* 使用 flexbox */
+  flex-direction: column; /* 垂直排列子元素 */
+  height: 100vh; /* 使整個應用佔滿整個視窗高度 */
   text-align: center;
   max-width: 100%; /* 調整為百分比使其在不同螢幕下可彈性縮放 */
   margin: 0 auto;
@@ -130,10 +133,10 @@ body {
 }
 
 .map-container {
-  position: relative;
-  width: 100%; /* 將地圖的寬度設定為80%，可以根據需要調整 */
-  height: 40vh; /* 高度設定為40%視窗高度 */
-  justify-content: center; /* 水平置中 */
+  flex: 1; /* 讓地圖容器填滿剩餘的空間 */
+  width: 100%; /* 確保地圖寬度為 100% */
+  height: auto; /* 自動高度，依據 flex 設置 */
+  position: relative; /* 為地圖定位設定參考 */
 }
 
 .custom-info-window {
@@ -143,4 +146,115 @@ body {
 
 .locate-button:hover {
   background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+  }
+
+  .App {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 10px;
+  }
+
+  .input-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .input-field {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    outline: none;
+    font-size: calc(8px + 1vmin);
+    min-width: 120px;
+  }
+
+  .swap-button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 8px;
+  }
+
+  .button-image2 {
+    width: 25px;
+    height: 25px;
+  }
+
+  .button-row {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .text-button,
+  .history-button {
+    width: 30%;
+    padding: 8px;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: calc(9px + 0.6vmin);
+    text-align: center;
+  }
+
+  .text-button:hover,
+  .history-button:hover {
+    background-color: #e0e0e0;
+  }
+
+  .map-container {
+    width: 100%;
+    height: calc(100vh - 320px);
+    border-radius: 10px;
+    overflow: hidden;
+    flex: 1;
+    margin-top: 10px;
+  }
+
+  .chat-icon {
+    width: 60px;
+    height: 60px;
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
+    z-index: 1000;
+  }
+
+  .chat-icon:hover {
+    background-color: #e0e0e0;
+  }
 }

@@ -6,7 +6,7 @@ import React from 'react';
 const SearchHistoryModal = ({ searchHistory, closeModal }) => (
   <div className="history-modal">
     <div className="history-modal-content">
-      // 關閉按鈕，點擊後會觸發closeModal函數來關閉彈窗
+      {/* 關閉按鈕，點擊後會觸發closeModal函數來關閉彈窗 */}
       <span className="history-close" onClick={closeModal}>&times;</span>
       <div className="history-content">
         <h4>搜尋紀錄</h4>

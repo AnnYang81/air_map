@@ -11,66 +11,69 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        height: 100vh; /* 讓應用程式佔滿整個視窗高度 */
+        height: 100vh;
     }
 
+    /* 調整 input-container 使輸入框堆疊，並將按鈕放在中間 */
     .input-container {
         display: flex;
         flex-direction: column;
         align-items: center;
         width: 100%;
         max-width: 400px;
-        margin: 10px 0; /* 調整上下間距 */
+        margin-bottom: 10px;
     }
 
     .input-wrapper {
         display: flex;
-        flex-wrap: wrap; /* 允許換行 */
-        justify-content: space-between;
-        gap: 8px; /* 減小間距 */
+        justify-content: center;
+        align-items: center;
         width: 100%;
+        margin-bottom: 10px;
     }
 
+    /* 調整輸入框的樣式 */
     .input-field {
         flex: 1;
-        padding: 10px; /* 減小內邊距 */
+        padding: 10px;
         border: 1px solid #ddd;
         border-radius: 10px;
         outline: none;
         font-size: calc(8px + 1vmin);
-        min-width: 120px; /* 確保最小寬度 */
+        min-width: 120px;
     }
 
-    .swap-button, .search-button {
+    /* 將交換按鈕放在兩個輸入框之間 */
+    .swap-button {
         background: transparent;
         border: none;
         cursor: pointer;
         padding: 0;
+        margin-left: 8px;
     }
 
-    .button-image, .button-image2 {
-        width: 25px; /* 減小圖標大小 */
+    .button-image2 {
+        width: 25px;
         height: 25px;
     }
 
-    /* 讓登入和搜尋紀錄按鈕在同一排 */
+    /* 底部按鈕區域，按鈕水平排列 */
     .button-row {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
         width: 100%;
-        margin-top: 10px; /* 確保與其他元素有間距 */
+        margin-top: 10px;
     }
 
     .text-button, .history-button {
-        width: 48%; /* 每個按鈕佔據 48% 的寬度 */
-        padding: 6px; /* 減小內邊距 */
-        margin-top: 10px; /* 調整間距 */
+        width: 30%;
+        padding: 8px;
         background-color: #ffffff;
         border: 1px solid #ccc;
         border-radius: 10px;
         cursor: pointer;
         transition: background-color 0.3s ease;
-        font-size: calc(9px + 0.6vmin); /* 減小字體大小 */
+        font-size: calc(9px + 0.6vmin);
         text-align: center;
     }
 
@@ -78,23 +81,23 @@
         background-color: #e0e0e0;
     }
 
-    /* 確保地圖容器始終佔滿可用的空間 */
+    /* 地圖容器與上方和下方元素區分開，地圖占用剩餘的空間 */
     .map-container {
         width: 100%;
-        height: calc(100vh - 350px); /* 根據 header 和其他元素的高度動態調整，確保地圖不被遮擋 */
+        height: calc(100vh - 320px);
         border-radius: 10px;
         overflow: hidden;
-        flex: 1; /* 讓地圖容器自動填滿剩餘空間 */
-        margin-top: 10px; /* 確保地圖和其他元素之間有間距 */
+        flex: 1;
+        margin-top: 10px;
     }
 
-    /* 將聊天按鈕移至左側 */
+    /* 聊天按鈕 */
     .chat-icon {
         width: 60px;
         height: 60px;
         position: fixed;
-        bottom: 20px; /* 確保不與地圖功能重疊 */
-        left: 20px; /* 將按鈕移至左側，避免與右下角的地圖按鈕重疊 */
+        bottom: 20px;
+        left: 20px;
         background-color: #ffffff;
         border-radius: 50%;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -102,30 +105,10 @@
         justify-content: center;
         align-items: center;
         transition: background-color 0.3s ease;
-        z-index: 1000; /* 確保其在Google控制元件之上 */
+        z-index: 1000;
     }
-    
+
     .chat-icon:hover {
         background-color: #e0e0e0;
-    }
-
-    /* 小螢幕時的調整 */
-    @media (max-width: 480px) {
-        .input-wrapper {
-            flex-wrap: wrap;
-            gap: 8px; /* 減小間距 */
-        }
-
-        .input-field {
-            min-width: 100px; /* 確保最小寬度 */
-        }
-
-        .text-button, .history-button {
-            width: 100%; /* 小螢幕下按鈕佔據整個寬度 */
-        }
-
-        .map-container {
-            height: calc(100vh - 250px); /* 調整小螢幕上的地圖高度 */
-        }
     }
 }
