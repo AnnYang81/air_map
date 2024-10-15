@@ -1,0 +1,114 @@
+@media (max-width: 768px) {
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f7f7f7;
+    }
+
+    .App {
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100vh;
+    }
+
+    /* 調整 input-container 使輸入框堆疊，並將按鈕放在中間 */
+    .input-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        max-width: 400px;
+        margin-bottom: 10px;
+    }
+
+    .input-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    /* 調整輸入框的樣式 */
+    .input-field {
+        flex: 1;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        outline: none;
+        font-size: calc(8px + 1vmin);
+        min-width: 120px;
+    }
+
+    /* 將交換按鈕放在兩個輸入框之間 */
+    .swap-button {
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        margin-left: 8px;
+    }
+
+    .button-image2 {
+        width: 25px;
+        height: 25px;
+    }
+
+    /* 底部按鈕區域，按鈕水平排列 */
+    .button-row {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .text-button, .history-button {
+        width: 30%;
+        padding: 8px;
+        background-color: #ffffff;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        font-size: calc(9px + 0.6vmin);
+        text-align: center;
+    }
+
+    .text-button:hover, .history-button:hover {
+        background-color: #e0e0e0;
+    }
+
+    /* 地圖容器與上方和下方元素區分開，地圖占用剩餘的空間 */
+    .map-container {
+        width: 100%;
+        height: calc(100vh - 320px);
+        border-radius: 10px;
+        overflow: hidden;
+        flex: 1;
+        margin-top: 10px;
+    }
+
+    /* 聊天按鈕 */
+    .chat-icon {
+        width: 60px;
+        height: 60px;
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        background-color: #ffffff;
+        border-radius: 50%;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: background-color 0.3s ease;
+        z-index: 1000;
+    }
+
+    .chat-icon:hover {
+        background-color: #e0e0e0;
+    }
+}
